@@ -1,0 +1,105 @@
+@font-face {
+    font-family: Roboto;
+    src: url("../fonts/Roboto/Roboto-Black.ttf");
+}
+
+@font-face {
+    font-family: Lato;
+    src: url("../fonts/Lato/Lato-Black.ttf");
+}
+
+@font-face {
+    font-family: Open-Sans;
+    src: url("../fonts/Open_Sans/OpenSans-Bold.ttf");
+}
+
+@font-face {
+    font-family: Roboto-Light;
+    src: url("../fonts/Roboto/Roboto-Light.ttf");
+}
+
+html, body {
+  background-color: #f0f0f0;
+}
+
+.auth-title-logo {
+  font-size: 2.5em;
+  font-family: Lato, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px #181818;
+  letter-spacing: 2px;
+  color: #36526d;
+  padding: 20px;
+}
+
+.auth-container {
+  background-color: #f9f9f9;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.auth-col {
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin: 20px;
+  width: auto;
+}
+
+.auth-grid {
+}
+
+.auth-title {
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.form-element {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.error-msg {
+  font-family: Roboto-Medium, sans-serif;
+  font-size: 0.8em;
+  color: #fff;
+  text-align: center;
+  text-transform: none;
+  margin-bottom: 15px;
+  background: #ba1438;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  display: none;
+  letter-spacing: normal;
+  width: 200px;
+}
+
+.button-s {
+  padding: 10px;
+  text-transform: uppercase;
+  font-family: Roboto-Medium, sans-serif;
+  background-color: #36526d;
+  color: #fff;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+}
+
+.politicas {
+  padding: 10px;
+  text-transform: uppercase;
+  padding-bottom: 0;
+  width: 200px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.5em;
+}

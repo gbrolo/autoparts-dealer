@@ -1,0 +1,20 @@
+.search-container {
+  background-color: #f9f9f9;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  padding: 20px;
+  padding-bottom: 10px;
+}
+
+.search-icon {
+  background-color: #36526d;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 40px;
+  text-align: center;
+  padding-top: 10px;
+}
