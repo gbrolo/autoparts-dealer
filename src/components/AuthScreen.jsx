@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { Redirect } from 'react-router'
-import { Checkbox, Button, Panel, PanelGroup, FormGroup, FormControl, InputGroup, Grid, Row, Col } from 'react-bootstrap';
+import { Redirect } from 'react-router';
+import { Modal, Checkbox, Button, Panel, PanelGroup, FormGroup, FormControl, InputGroup, Grid, Row, Col } from 'react-bootstrap';
 import '../res/css/auth.css';
 import '../res/icons/font-awesome-4.7.0/css/font-awesome.min.css';
 
@@ -33,6 +33,7 @@ class AuthScreen extends Component {
           acceptedPolitics: false,
           error: '',
           register_error: '',
+          show: false,
           userdata : {
 
           },
@@ -44,6 +45,8 @@ class AuthScreen extends Component {
           }
         };
 
+        this.handleShow = this.handleShow.bind(this);
+        this.handleClose = this.handleClose.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.validateEmail = this.validateEmail.bind(this);
@@ -103,6 +106,15 @@ class AuthScreen extends Component {
     this.saveLoginData();
   }
 
+
+  handleClose() {
+   this.setState({ show: false });
+  }
+
+  handleShow() {
+   this.setState({ show: true });
+  }
+
   register(event) {
     this.onSubmit(event);
 
@@ -110,11 +122,24 @@ class AuthScreen extends Component {
     if (registerFormValid){
         document.getElementById('register-error-msg').style.display = 'none';
         var qs = require('qs');
+
+        var newUser = {
+            firstname: this.state.nameUser,
+            lastname: this.state.lastname,
+            email: this.state.email,
+            password: this.state.password,
+            address: this.state.address
+        }
+
+            this.handleShow();
+        axios.post('http://localhost:8080/api/user', newUser).then(res => {
+        })
     } else {
         this.setState({ register_error: 5 });
         document.getElementById('register-error-msg').style.display = 'block';
     }
   }
+
 
 nothing() {
 
@@ -334,6 +359,20 @@ errores2(){
             </Row>
           </Grid>
         </div>
+
+          <div>
+          <Modal show={this.state.show} onHide={this.handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Modal heading</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+
+            </Modal.Body>
+            <Modal.Footer>
+              <Button onClick={this.handleClose}>Close</Button>
+            </Modal.Footer>
+          </Modal>
+          </div>
       </div>
     )
   }

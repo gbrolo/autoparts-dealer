@@ -12,9 +12,17 @@
 .search-icon {
   background-color: #36526d;
   color: #fff;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   width: 40px;
   text-align: center;
   padding-top: 10px;
+}
+
+.search-icon:hover {
+    cursor: pointer;
+}
+
+.center {
+    text-align: center;
 }
