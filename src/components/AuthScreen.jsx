@@ -131,8 +131,8 @@ class AuthScreen extends Component {
             address: this.state.address
         }
 
-            this.handleShow();
         axios.post('http://localhost:8080/api/user', newUser).then(res => {
+            this.setState({redirect: true});
         })
     } else {
         this.setState({ register_error: 5 });
@@ -359,20 +359,6 @@ errores2(){
             </Row>
           </Grid>
         </div>
-
-          <div>
-          <Modal show={this.state.show} onHide={this.handleClose}>
-            <Modal.Header closeButton>
-              <Modal.Title>Modal heading</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-
-            </Modal.Body>
-            <Modal.Footer>
-              <Button onClick={this.handleClose}>Close</Button>
-            </Modal.Footer>
-          </Modal>
-          </div>
       </div>
     )
   }
